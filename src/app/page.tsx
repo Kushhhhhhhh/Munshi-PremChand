@@ -1,103 +1,150 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Home() {
+import FeaturedStories from "@/components/FeaturedStories"
+import AuthorQuote from "@/components/AuthorQuote"
+import BookshelfPreview from "@/components/BookshelfPreview"
+
+export default async function Home() {
+
+  const featuredBooks = await getFeaturedBooks();
+  const authorQuote = await getRandomAuthorQuote();
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-amber-50">
+   
+      <section className="relative border-b-4 border-black">
+        <div className="absolute inset-0 bg-olive-600 opacity-10"></div>
+        <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="flex flex-col gap-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-black">
+                मुंशी प्रेमचंद
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-800">
+                साहित्य की दुनिया के महान कथाकार
+              </p>
+              <p className="text-base md:text-lg text-gray-700">
+                उपन्यास एवं कहानियों का अनमोल संग्रह
+              </p>
+              <div className="pt-4">
+                <Link 
+                  href="/books" 
+                  className="inline-block px-8 py-4 bg-black text-amber-50 font-bold text-lg border-2 border-black hover:bg-amber-50 hover:text-black transition-colors duration-300"
+                >
+                  पुस्तकें देखें
+                </Link>
+              </div>
+            </div>
+            <div className="relative h-64 md:h-96 border-4 border-black shadow-brutal">
+              <Image
+                src="/munshi-premchand.png"
+                alt="मुंशी प्रेमचंद"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <AuthorQuote quote={authorQuote} />
+
+      <section className="py-16 bg-olive-100 border-y-4 border-black">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-black pb-2">
+            प्रमुख रचनाएँ
+          </h2>
+          <BookshelfPreview books={featuredBooks} />
+        </div>
+      </section>
+
+      <section className="py-16 bg-amber-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-black pb-2">
+            प्रसिद्ध कहानियाँ
+          </h2>
+          <FeaturedStories />
+        </div>
+      </section>
+
+      <section className="py-16 bg-olive-200 border-t-4 border-black">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="flex flex-col gap-4">
+              <h2 className="text-3xl md:text-4xl font-bold border-b-2 border-black pb-2">
+                प्रेमचंद के बारे में
+              </h2>
+              <p className="text-lg">
+                मुंशी प्रेमचंद, जिनका वास्तविक नाम धनपत राय श्रीवास्तव था, हिंदी और उर्दू साहित्य के महानतम लेखकों में से एक हैं। उन्होंने अपनी लेखनी से भारतीय समाज की वास्तविकताओं को चित्रित किया।
+              </p>
+              <p className="text-lg">
+                उनके साहित्य में ग्रामीण भारत, सामाजिक विषमता, शोषण और मानवीय संघर्ष के चित्रण मिलते हैं।
+              </p>
+              <Link 
+                href="/about" 
+                className="inline-block px-6 py-3 mt-4 bg-black text-amber-50 font-bold border-2 border-black hover:bg-amber-50 hover:text-black transition-colors duration-300"
+              >
+                और जानें
+              </Link>
+            </div>
+            <div className="relative h-64 md:h-auto border-4 border-black shadow-brutal">
+              <Image
+                src="/premchand-1.jpeg"
+                alt="प्रेमचंद लिखते हुए"
+                fill
+                sizes="(max-width: 786px) 100vw, 40vw"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
+}
+
+async function getFeaturedBooks() {
+  return [
+    {
+      id: '1',
+      title: 'गोदान',
+      coverImage: '/godan.jpeg',
+      summary: 'एक किसान होरी की दर्दनाक कहानी।',
+      year: '1936'
+    },
+    {
+      id: '2',
+      title: 'कफ़न',
+      coverImage: '/kafan.jpeg',
+      summary: 'गरीबी और संवेदनहीनता का मार्मिक चित्रण।',
+      year: '1936'
+    },
+    {
+      id: '3',
+      title: 'निर्मला',
+      coverImage: '/nirmala.jpeg',
+      summary: 'अनमेल विवाह की समस्या पर आधारित उपन्यास।',
+      year: '1925'
+    },
+    {
+      id: '4',
+      title: 'प्रेमाश्रम',
+      coverImage: '/premashram.jpeg',
+      summary: 'सामाजिक और राजनीतिक परिवर्तन की कहानी।',
+      year: '1922'
+    }
+  ];
+}
+
+async function getRandomAuthorQuote() {
+  const quotes = [
+    "साहित्य के चट्टान से टकराकर निकला हुआ वह झरना है, जिसमें भावना की मादकता और विचारों का ओज और भाषा की मिठास होती है।",
+    "साहित्य उस शराब के समान है जो पीने वाले को नशा करती है और देखने वाले को भी।",
+    "जीवन में जिस चीज़ का आदर है, वह है सादगी और सत्यता।"
+  ];
+  
+  return quotes[Math.floor(Math.random() * quotes.length)];
 }
