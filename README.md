@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Munshi Premchand Literature Frontend
 
-## Getting Started
+A fully responsive, classic-themed frontend dedicated to my favorite author **Munshi Premchand**. The design captures vintage literary vibes to honor his timeless contributions to Hindi literature.
 
-First, run the development server:
+## About the Project
+This project showcases some of Munshi Premchand's most famous books and stories in a simple, elegant, and easy-to-navigate interface. The entire website is focused on delivering a clean, old-school experience while ensuring modern responsiveness across all devices.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> **Note:** This is a frontend-only project.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+- **Next.js** – React-based framework for building fast, scalable web applications.
+- **TypeScript** – Ensuring type safety and maintainability.
+- **Tailwind CSS** – For clean, utility-first styling.
+- **Framer Motion** – For smooth, minimal animations.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
+- Classic, vintage-inspired UI.
+- Fully responsive design.
+- Smooth transitions and animations.
+- Clean code structure using TypeScript.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+Feel free to explore the project and dive into the literary world of Munshi Premchand.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![alt text](<Screenshot 2025-06-20 221418.png>) ![alt text](<Screenshot 2025-06-20 221435.png>) ![alt text](<Screenshot 2025-06-20 221456.png>)

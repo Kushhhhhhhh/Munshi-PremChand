@@ -26,9 +26,7 @@ export default function Header() {
 
           <nav className="hidden md:flex items-center gap-1">
             <NavLink href="/books">पुस्तकें</NavLink>
-            <NavLink href="/stories">कहानियाँ</NavLink>
             <NavLink href="/about">प्रेमचंद के बारे में</NavLink>
-            <NavLink href="/favorites">मेरी पसंदीदा</NavLink>
           </nav>
 
           <button 
@@ -56,9 +54,7 @@ export default function Header() {
           <div className="md:hidden border-t-2 border-black py-4">
             <nav className="flex flex-col gap-2">
               <MobileNavLink href="/books" onClick={() => setIsMenuOpen(false)}>पुस्तकें</MobileNavLink>
-              <MobileNavLink href="/stories" onClick={() => setIsMenuOpen(false)}>कहानियाँ</MobileNavLink>
               <MobileNavLink href="/about" onClick={() => setIsMenuOpen(false)}>प्रेमचंद के बारे में</MobileNavLink>
-              <MobileNavLink href="/favorites" onClick={() => setIsMenuOpen(false)}>मेरी पसंदीदा</MobileNavLink>
             </nav>
           </div>
         )}

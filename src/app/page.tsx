@@ -30,7 +30,7 @@ export default async function Home() {
               <div className="pt-4">
                 <Link 
                   href="/books" 
-                  className="inline-block px-8 py-4 bg-black text-amber-50 font-bold text-lg border-2 border-black hover:bg-amber-50 hover:text-black transition-colors duration-300"
+                  className="px-8 py-4 bg-black text-white font-bold text-lg border-2 border-black hover:cursor-pointer"
                 >
                   पुस्तकें देखें
                 </Link>
@@ -85,7 +85,7 @@ export default async function Home() {
               </p>
               <Link 
                 href="/about" 
-                className="inline-block px-6 py-3 mt-4 bg-black text-amber-50 font-bold border-2 border-black hover:bg-amber-50 hover:text-black transition-colors duration-300"
+                className="px-6 py-3 mt-4 bg-black text-amber-50 font-bold border-2 border-black transition-colors duration-300"
               >
                 और जानें
               </Link>
