@@ -21,7 +21,7 @@ const books = [
     description: 'सामाजिक विडंबना पर आधारित एक भावुक कहानी।',
   },
   {
-    slug: 'nirmal',
+    slug: 'nirmala',
     title: 'निर्मल',
     cover: '/nirmala.jpeg',
     description: 'एक श्रद्धालु महिला की आध्यात्मिक यात्रा।',
@@ -39,9 +39,9 @@ const books = [
     description: 'प्रेम और समाज सुधार के विचारों पर आधारित उपन्यास।',
   },
   {
-    slug: 'shatrang',
-    title: 'शतरंग',
-    cover: '/shatrang.jpeg',
+    slug: 'shatranj',
+    title: 'शतरंज',
+    cover: '/shatranj.jpeg',
     description: 'शतरंज के माध्यम से मानव मन की गहराइयाँ।',
   },
 ]

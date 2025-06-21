@@ -27,7 +27,7 @@ export default async function Home() {
               <p className="text-base md:text-lg text-gray-700">
                 उपन्यास एवं कहानियों का अनमोल संग्रह
               </p>
-              <div className="pt-4">
+              <div className="pt-4 z-50">
                 <Link 
                   href="/books" 
                   className="px-8 py-4 bg-black text-white font-bold text-lg border-2 border-black hover:cursor-pointer"
@@ -109,28 +109,28 @@ export default async function Home() {
 async function getFeaturedBooks() {
   return [
     {
-      id: '1',
+      id: 'godan',
       title: 'गोदान',
       coverImage: '/godan.jpeg',
       summary: 'एक किसान होरी की दर्दनाक कहानी।',
       year: '1936'
     },
     {
-      id: '2',
+      id: 'kafan',
       title: 'कफ़न',
       coverImage: '/kafan.jpeg',
       summary: 'गरीबी और संवेदनहीनता का मार्मिक चित्रण।',
       year: '1936'
     },
     {
-      id: '3',
+      id: 'nirmala',
       title: 'निर्मला',
       coverImage: '/nirmala.jpeg',
       summary: 'अनमेल विवाह की समस्या पर आधारित उपन्यास।',
       year: '1925'
     },
     {
-      id: '4',
+      id: 'premashram',
       title: 'प्रेमाश्रम',
       coverImage: '/premashram.jpeg',
       summary: 'सामाजिक और राजनीतिक परिवर्तन की कहानी।',

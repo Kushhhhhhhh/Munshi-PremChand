@@ -5,19 +5,19 @@ export default function FeaturedStories() {
 
   const featuredStories = [
     {
-      id: '1',
+      id: 'panch-parmeshwar',
       title: 'पंच परमेश्वर',
       summary: 'दो दोस्तों के बीच झगड़े और न्याय की कहानी।',
       imageSrc: '/panch-parmeshwar.jpeg'
     },
     {
-      id: '2',
+      id: 'idgah',
       title: 'ईदगाह',
       summary: 'एक बच्चे की परोपकारी भावना की हृदयस्पर्शी कहानी।',
       imageSrc: '/idgah.jpeg'
     },
     {
-      id: '3',
+      id: 'shatranj',
       title: 'शतरंज के खिलाड़ी',
       summary: 'अवध के दो शौकीन नवाबों और अंग्रेजी राज की कहानी।',
       imageSrc: '/shatrang.jpeg'
@@ -27,7 +27,7 @@ export default function FeaturedStories() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {featuredStories.map((story) => (
-        <Link href={`/stories/${story.id}`} key={story.id}>
+        <Link href={`/books/${story.id}`} key={story.id}>
           <div className="border-4 border-black bg-amber-100 h-full transition-transform hover:-translate-y-2 hover:shadow-brutal">
             <div className="relative h-48 border-b-4 border-black">
               <Image
