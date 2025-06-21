@@ -20,7 +20,7 @@ export default function FeaturedStories() {
       id: 'shatranj',
       title: 'शतरंज के खिलाड़ी',
       summary: 'अवध के दो शौकीन नवाबों और अंग्रेजी राज की कहानी।',
-      imageSrc: '/shatrang.jpeg'
+      imageSrc: '/shatranj.jpeg'
     }
   ];
 
